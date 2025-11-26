@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search, ChevronDown, Loader2, Plus, Trash2 } from 'lucide-react';
 import { SearchEngine } from '../types';
-import { generateAnswer } from '../services/geminiService';
+// import { generateAnswer } from '../services/geminiService';
 import { TranslationType } from '../translations';
 import { fetchSuggestions } from '../services/jsonp';
 
@@ -91,7 +91,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     setShowSuggestions(false);
     
     if (selectedEngine.isAI) {
-      onAiResult(text, await generateAnswer(text, t.systemInstruction));
+      onAiResult(text, null);
     } else {
       const url = selectedEngine.searchUrl.replace('%s', encodeURIComponent(text));
       if (openInNewTab) {

@@ -11,7 +11,6 @@ import { SettingsModal } from './components/SettingsModal';
 import { AiResult } from './components/AiResult';
 import { Clock } from './components/Clock';
 import { AboutModal } from './components/AboutModal';
-import { generateAnswer } from './services/geminiService';
 
 const STORAGE_KEY_DATA = 'astralis_data';
 const STORAGE_KEY_ENGINES = 'astralis_engines';
@@ -161,8 +160,8 @@ const App: React.FC = () => {
   const handleAiSearch = async (query: string) => {
     setIsAiLoading(true);
     setAiQuery(query);
-    const response = await generateAnswer(query, t.systemInstruction);
-    setAiResponse(response);
+    // const response = await generateAnswer(query, t.systemInstruction);
+    setAiResponse(null);
     setIsAiLoading(false);
     setAiResultOpen(true);
   };
