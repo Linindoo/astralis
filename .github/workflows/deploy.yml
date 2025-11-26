@@ -15,7 +15,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.5
       with:
-        node-version: '16'  # 设置Node.js版本
+        node-version: '18'  # 设置Node.js版本
 
     - name: Install dependencies
       run: npm install  # 安装依赖，根据项目类型可能需要调整命令（如yarn install）
@@ -27,5 +27,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build  # 构建后的文件夹路径，根据项目类型可能需要调整（如dist, public等）
+        publish_dir: ./dist  # 构建后的文件夹路径，根据项目类型可能需要调整（如dist, public等）
         cname: nav.52zhoujia.cn  # 可选，如果你需要自定义域名的话
